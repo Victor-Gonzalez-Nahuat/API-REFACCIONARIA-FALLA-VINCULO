@@ -91,7 +91,7 @@ def obtenerProductosPorCodigo(codigo):
         (codigo01, nombre01, grupo01, maximo01, minimo01, precio_lista01, id_proveedor01) = tearma01
 
         cursor.execute("""
-            SELECT sadoinicial, entradas, salidas, ultimo_costo, ultima_venta, ultima_compra
+            SELECT saldoinicial, entradas, salidas, ultimo_costo, ultima_venta, ultima_compra
             FROM INARAR01
             WHERE dt_codigo = %s
         """, (codigo,))
