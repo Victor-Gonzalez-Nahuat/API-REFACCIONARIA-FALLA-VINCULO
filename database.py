@@ -93,7 +93,7 @@ def obtenerProductosPorCodigo(codigo):
         cursor.execute("""
             SELECT saldoinicial, entradas, salidas, ultimo_costo, ultima_venta, ultima_compra
             FROM INARAR01
-            WHERE dt_codigo = %s
+            WHERE codigo = %s
         """, (codigo,))
         inarar01 = cursor.fetchone()
 
