@@ -55,10 +55,10 @@ def obtenerProductosPorNombre(nombre):
         conn = get_connection()
         cursor = conn.cursor()
         cursor.execute("""
-            SELECT id_codigo, id_descripcion 
+            SELECT codigo, descripcion 
             FROM INARMA01 
-            WHERE id_descripcion LIKE %s
-            ORDER BY id_descripcion ASC
+            WHERE descripcion LIKE %s
+            ORDER BY descripcion ASC
             LIMIT 100
         """, (nombre + '%',))
         productos_encontrados = cursor.fetchall()
@@ -81,7 +81,7 @@ def obtenerProductosPorCodigo(codigo):
         cursor.execute("""
             SELECT codigo, descripcion, grupo, maximo, minimo, lista1, provee
             FROM INARMA01
-            WHERE id_codigo = %s
+            WHERE codigo = %s
         """, (codigo,))
         tearma01 = cursor.fetchone()
 
