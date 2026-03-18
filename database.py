@@ -79,7 +79,7 @@ def obtenerProductosPorCodigo(codigo):
         cursor = conn.cursor()
 
         cursor.execute("""
-            SELECT id_codigo, id_descripcion, id_grupo, id_maximo, id_minimo, id_lista1, id_provee
+            SELECT codigo, descripcion, grupo, maximo, minimo, lista1, provee
             FROM INARMA01
             WHERE id_codigo = %s
         """, (codigo,))
@@ -91,7 +91,7 @@ def obtenerProductosPorCodigo(codigo):
         (codigo01, nombre01, grupo01, maximo01, minimo01, precio_lista01, id_proveedor01) = tearma01
 
         cursor.execute("""
-            SELECT dt_sadoinicial, dt_entradas, dt_salidas, dt_ultimo_costo, dt_ultima_venta, dt_ultima_compra
+            SELECT sadoinicial, entradas, salidas, ultimo_costo, ultima_venta, ultima_compra
             FROM INARAR01
             WHERE dt_codigo = %s
         """, (codigo,))
